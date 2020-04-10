@@ -24,9 +24,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/leaflet/leaflet.css",
+              "src/assets/leaflet/MarkerCluster.css",
+              "src/assets/leaflet/MarkerCluster.Default.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/leaflet/leaflet.js",
+              "src/assets/leaflet/leaflet.markercluster-src.js"
+            ]
           },
           "configurations": {
             "production": {
