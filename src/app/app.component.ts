@@ -9,8 +9,11 @@ declare let L;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
   title = 'angular-leaflet';
   map: any;
+  clusterMarkers: any = [];
+  markerSearched;
 
   constructor() {}
 
@@ -53,7 +56,7 @@ export class AppComponent implements OnInit {
   addMarkers() {
     let self = this;
     // array with markers
-    var clusterMarkers = [{
+    this.clusterMarkers = [{
       lat: 7.781059,
       lng: -72.226942,
       title: "Mercado la Guayana",
@@ -113,8 +116,8 @@ export class AppComponent implements OnInit {
     var markers = L.markerClusterGroup();
 
     // bind popups and events to each marker
-    for (var i = 0; i < clusterMarkers.length; i++) {
-			var mark = clusterMarkers[i];
+    for (var i = 0; i < this.clusterMarkers.length; i++) {
+			var mark = this.clusterMarkers[i];
 			var title = mark.title;
 			var Icon = L.icon({
 				iconUrl: mark.icon, // set image to icon
@@ -185,5 +188,17 @@ export class AppComponent implements OnInit {
 
     // add markers to map
 		this.map.addLayer(markers);
+  }
+
+  // method to search a marker on map
+  searchMarker(): void {
+    let markerFound = this.clusterMarkers.find( mark => mark.title == this.markerSearched)
+    if ( markerFound ) {
+      var lat = markerFound.lat;
+      var lng = markerFound.lng;
+      var latlng = L.latLng(lat, lng);
+      var zoom = 20;
+      this.map.flyTo(latlng,zoom);
+    }
   }
 }

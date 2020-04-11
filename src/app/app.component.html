@@ -1,9 +1,13 @@
-
-
 <div class="content" role="main">
+  <div id="searchmarkers">
+      <select id="select-search" [(ngModel)]="markerSearched" (change)="searchMarker()"> 
+        <option *ngFor="let marker of clusterMarkers" [value]="marker.title">
+            {{marker.title}}
+        </option>
+      </select>
+  </div>
 
   <div id="map" style="width: 100%; height: 95vh;">
-  
   </div>
 
 </div>
