@@ -92,26 +92,52 @@ export class AppComponent implements OnInit {
     },
 
     {
-      lat: 7.792881,
-      lng: -72.201694,
+      lat: 7.792827,
+      lng: -72.201575,
       title: "Unet Edificio A",
       icon: './../assets/leaflet/images/marker-icon.png',
     },
 
     {
-      lat: 7.792881,
-      lng: -72.201694,
+      lat: 7.792827,
+      lng: -72.201575,
       title: "Unet Cafetín Edificio A",
       icon: './../assets/leaflet/images/marker-icon.png',
     },
 
     {
-      lat: 7.797150,
-      lng: -72.219433,
+      lat: 7.796564,
+      lng: -72.219358,
       title: "Iglesia Santa Teresa",
       icon: './../assets/leaflet/images/marker-icon.png',
-    }];
+    }
+    ,
 
+    {
+      lat: 7.790919,
+      lng: -72.200335,
+      title: "Estadio de Béisbol",
+      icon: './../assets/leaflet/images/marker-icon.png',
+    },
+    {
+      lat: 7.787119,
+      lng: -72.197933,
+      title: "Estadio de Fútbol",
+      icon: './../assets/leaflet/images/marker-icon.png',
+    },
+    {
+      lat: 7.787736,
+      lng: -72.201430,
+      title: "Plaza de Toros",
+      icon: './../assets/leaflet/images/marker-icon.png',
+    },
+    {
+      lat: 7.791589,
+      lng: -72.202706,
+      title: "Velódromo",
+      icon: './../assets/leaflet/images/marker-icon.png',
+    }
+  ];
     // create marker Cluster Group
     var markers = L.markerClusterGroup();
 
